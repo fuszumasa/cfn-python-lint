@@ -6359,6 +6359,17 @@
         }
       }
     },
+    "AWS::DynamoDB::Table.KinesisStreamSpecification": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-kinesisstreamspecification.html",
+      "Properties": {
+        "StreamArn": {
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-kinesisstreamspecification.html#cfn-dynamodb-kinesisstreamspecification-streamarn",
+          "PrimitiveType": "String",
+          "Required": true,
+          "UpdateType": "Mutable"
+        }
+      }
+    },
     "AWS::DynamoDB::Table.LocalSecondaryIndex": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-lsi.html",
       "Properties": {
@@ -17630,6 +17641,45 @@
         }
       }
     },
+    "AWS::IoTSiteWise::AssetModel.AssetModelCompositeModel": {
+      "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-assetmodelcompositemodel.html",
+      "Properties": {
+        "CompositeModelProperties": {
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-assetmodelcompositemodel.html#cfn-iotsitewise-assetmodel-assetmodelcompositemodel-compositemodelproperties",
+          "ItemType": "AssetModelProperty",
+          "Required": false,
+          "Type": "List",
+          "UpdateType": "Mutable"
+        },
+        "Description": {
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-assetmodelcompositemodel.html#cfn-iotsitewise-assetmodel-assetmodelcompositemodel-description",
+          "PrimitiveType": "String",
+          "Required": false,
+          "UpdateType": "Mutable",
+          "Value": {
+            "ValueType": "AWS::IoTSiteWise::AssetModel.AssetModelCompositeModel.Description"
+          }
+        },
+        "Name": {
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-assetmodelcompositemodel.html#cfn-iotsitewise-assetmodel-assetmodelcompositemodel-name",
+          "PrimitiveType": "String",
+          "Required": true,
+          "UpdateType": "Mutable",
+          "Value": {
+            "ValueType": "AWS::IoTSiteWise::AssetModel.AssetModelCompositeModel.Name"
+          }
+        },
+        "Type": {
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-assetmodelcompositemodel.html#cfn-iotsitewise-assetmodel-assetmodelcompositemodel-type",
+          "PrimitiveType": "String",
+          "Required": true,
+          "UpdateType": "Mutable",
+          "Value": {
+            "ValueType": "AWS::IoTSiteWise::AssetModel.AssetModelCompositeModel.Type"
+          }
+        }
+      }
+    },
     "AWS::IoTSiteWise::AssetModel.AssetModelHierarchy": {
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-assetmodelhierarchy.html",
       "Properties": {
@@ -17672,6 +17722,15 @@
           "UpdateType": "Mutable",
           "Value": {
             "ValueType": "AWS::IoTSiteWise::AssetModel.AssetModelProperty.DataType"
+          }
+        },
+        "DataTypeSpec": {
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-assetmodelproperty.html#cfn-iotsitewise-assetmodel-assetmodelproperty-datatypespec",
+          "PrimitiveType": "String",
+          "Required": false,
+          "UpdateType": "Mutable",
+          "Value": {
+            "ValueType": "AWS::IoTSiteWise::AssetModel.AssetModelProperty.DataTypeSpec"
           }
         },
         "LogicalId": {
@@ -26386,7 +26445,7 @@
       }
     }
   },
-  "ResourceSpecificationVersion": "28.1.0",
+  "ResourceSpecificationVersion": "29.0.0",
   "ResourceTypes": {
     "AWS::AccessAnalyzer::Analyzer": {
       "Attributes": {
@@ -31527,6 +31586,12 @@
           "Type": "List",
           "UpdateType": "Immutable"
         },
+        "KinesisStreamSpecification": {
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-kinesisstreamspecification",
+          "Required": false,
+          "Type": "KinesisStreamSpecification",
+          "UpdateType": "Mutable"
+        },
         "LocalSecondaryIndexes": {
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-lsi",
           "DuplicatesAllowed": true,
@@ -34949,6 +35014,12 @@
         },
         "CacheNodeType": {
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-cachenodetype",
+          "PrimitiveType": "String",
+          "Required": false,
+          "UpdateType": "Mutable"
+        },
+        "CacheParameterGroupName": {
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-cacheparametergroupname",
           "PrimitiveType": "String",
           "Required": false,
           "UpdateType": "Mutable"
@@ -39156,6 +39227,13 @@
       },
       "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-assetmodel.html",
       "Properties": {
+        "AssetModelCompositeModels": {
+          "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-assetmodel.html#cfn-iotsitewise-assetmodel-assetmodelcompositemodels",
+          "ItemType": "AssetModelCompositeModel",
+          "Required": false,
+          "Type": "List",
+          "UpdateType": "Mutable"
+        },
         "AssetModelDescription": {
           "Documentation": "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-assetmodel.html#cfn-iotsitewise-assetmodel-assetmodeldescription",
           "PrimitiveType": "String",
@@ -45967,6 +46045,21 @@
         "DISABLED"
       ]
     },
+    "AWS::IoTSiteWise::AssetModel.AssetModelCompositeModel.Description": {
+      "AllowedPatternRegex": "[^\\u0000-\\u001F\\u007F]+",
+      "StringMax": 2048,
+      "StringMin": 1
+    },
+    "AWS::IoTSiteWise::AssetModel.AssetModelCompositeModel.Name": {
+      "AllowedPatternRegex": "[^\\u0000-\\u001F\\u007F]+",
+      "StringMax": 256,
+      "StringMin": 1
+    },
+    "AWS::IoTSiteWise::AssetModel.AssetModelCompositeModel.Type": {
+      "AllowedPatternRegex": "[^\\u0000-\\u001F\\u007F]+",
+      "StringMax": 256,
+      "StringMin": 1
+    },
     "AWS::IoTSiteWise::AssetModel.AssetModelDescription": {
       "AllowedPatternRegex": "[^\\u0000-\\u001F\\u007F]+",
       "StringMax": 2048,
@@ -45995,7 +46088,13 @@
         "STRING",
         "INTEGER",
         "DOUBLE",
-        "BOOLEAN"
+        "BOOLEAN",
+        "STRUCT"
+      ]
+    },
+    "AWS::IoTSiteWise::AssetModel.AssetModelProperty.DataTypeSpec": {
+      "AllowedValues": [
+        "AWS/ALARM_STATE"
       ]
     },
     "AWS::IoTSiteWise::AssetModel.AssetModelProperty.LogicalId": {
@@ -48038,6 +48137,13 @@
         "t3a.nano",
         "t3a.small",
         "t3a.xlarge",
+        "t4g.2xlarge",
+        "t4g.large",
+        "t4g.medium",
+        "t4g.micro",
+        "t4g.nano",
+        "t4g.small",
+        "t4g.xlarge",
         "x1.16xlarge",
         "x1.32xlarge"
       ],

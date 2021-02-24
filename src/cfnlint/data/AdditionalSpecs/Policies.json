@@ -959,9 +959,13 @@
       "Actions": [
         "CreateEnvironment",
         "CreateSession",
+        "DeleteEnvironment",
+        "GetEnvironmentStatus",
         "GetFileDownloadUrls",
         "GetFileUploadUrls",
-        "PutCredentials"
+        "PutCredentials",
+        "StartEnvironment",
+        "StopEnvironment"
       ],
       "HasResource": true,
       "StringPrefix": "cloudshell"
@@ -6905,6 +6909,39 @@
         "comprehend:VpcSubnets"
       ]
     },
+    "Amazon Comprehend Medical": {
+      "ARNFormat": "arn:${Partition}:comprehendmedical:${Region}:${AccountId}:${ResourceType}/${ResourceName}",
+      "ARNRegex": "^arn:${Partition}:comprehendmedical:.+:.+:.+",
+      "Actions": [
+        "DescribeEntitiesDetectionV2Job",
+        "DescribeICD10CMInferenceJob",
+        "DescribePHIDetectionJob",
+        "DescribeRxNormInferenceJob",
+        "DetectEntitiesV2",
+        "DetectPHI",
+        "InferICD10CM",
+        "InferRxNorm",
+        "ListEntitiesDetectionV2Jobs",
+        "ListICD10CMInferenceJobs",
+        "ListPHIDetectionJobs",
+        "ListRxNormInferenceJobs",
+        "StartEntitiesDetectionV2Job",
+        "StartICD10CMInferenceJob",
+        "StartPHIDetectionJob",
+        "StartRxNormInferenceJob",
+        "StopEntitiesDetectionV2Job",
+        "StopICD10CMInferenceJob",
+        "StopPHIDetectionJob",
+        "StopRxNormInferenceJob"
+      ],
+      "HasResource": false,
+      "StringPrefix": "comprehendmedical",
+      "conditionKeys": [
+        "aws:SourceArn",
+        "aws:SourceVpc",
+        "aws:TagKeys"
+      ]
+    },
     "Amazon Connect": {
       "ARNFormat": "arn:${Partition}:connect:${Region}:${Account}:instance/${InstanceId}",
       "ARNRegex": "^arn:${Partition}:connect:.+:.+:instance/.+",
@@ -12316,16 +12353,6 @@
       ],
       "HasResource": false,
       "StringPrefix": "applicationinsights"
-    },
-    "Comprehend Medical": {
-      "ARNFormat": "arn:${Partition}:comprehendmedical:${Region}:${AccountId}:${ResourceType}/${ResourceName}",
-      "ARNRegex": "^arn:${Partition}:comprehendmedical:.+:.+:.+",
-      "Actions": [
-        "DetectEntities",
-        "DetectPHI"
-      ],
-      "HasResource": false,
-      "StringPrefix": "comprehendmedical"
     },
     "Data Pipeline": {
       "Actions": [
